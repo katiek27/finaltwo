@@ -1,10 +1,13 @@
 $high-emph: rgba(white, 0.87);
 $med-emph: rgba(white, 0.69); 
 $low-emph: rgba(white, 0.38);
-$dark-grey : #121212; 
-// $dark-grey : #1F1B24;
+$dark-grey : #061e4b; 
 $overlay: mix($dark-grey, white, 95%);
 $overlay-light: mix($dark-grey, white, 86%);
+$dark-blue : #0b386b;
+$overlay-blue: mix($dark-blue, white, 85%);
+$light-blue: #145a97;
+$overlay-lightblue: mix($light-blue, white, 80%);
 
 html, body, input, textarea, select, button {   
   color: $high-emph !important;
@@ -24,8 +27,8 @@ a:hover {
 }
 
 .site-nav {
-    background-color: $dark-grey;
-    border-color: $overlay-light;
+    background-color: $light-blue;
+    border-color: $overlay-lightblue;
 }
 
 * {
@@ -51,9 +54,9 @@ pre, code {
 }
 
 .btn {
-    background-color: $overlay !important;
+    background-color: $overlay-lightblue !important;
     color: $high-emph !important;
-    border-color: $overlay-light !important;
+    border-color: $overlay-lightblue !important;
 }
 
 .btn:hover {
@@ -61,14 +64,14 @@ pre, code {
 }
 
 table th{
-    background-color: $overlay;
-    border-color: $overlay-light;
+    background-color: $dark-blue;
+    border-color: $overlay-blue;
     color: $high-emph;
 }
 
 table td{
-    background-color: $dark-grey;
-    border-color: $overlay-light;
+    background-color: $dark-blue;
+    border-color: $overlay-blue;
     color: $med-emph;
 }
 
@@ -96,7 +99,7 @@ li .post-meta-description {
 }
 
 .search-result-highlight {
-    color:yellow !important;
+    color: #accbe1 !important;
     font-weight:bold !important;
 }
 
