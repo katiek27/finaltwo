@@ -2,18 +2,17 @@
 toc: true
 comments: false
 layout: tangibles
-title: Enemy/Platform Review Ticket
-description: quick review of what happened with the goomba and platform and coin
+title: the epic review ticket
+description: the master doc.
 type: tangibles
-courses: { compsci: {week: 15} }
+courses: { compsci: {week: 17} }
 ---
 
-##### Enemies #####
-- worked on actual implementation of the Goomba
-- Goomba's collision is to immmediately restart the game as the player touches the sides of the goomba
-- Utilizing the "destroy" function, the goomba will instead disappear once the top of the colliison is activated.
-- special effect to occur randomly where to goomba will change saturation and speed up (warning for players !)
+<html>
+<h1> The Table! </h1>
+Linked <a href="https://docs.google.com/spreadsheets/d/1jnoWjDJaa1NwDlcLIhz7HRhHxCB8gUGsORditmf1_cQ/edit?usp=sharing">Here!</a>
 
-##### Platforms and Coins #####
-- the platform is in! mario can stand, jump, and move on the platform regularly. 
-- coin will spawn on the floor but the collision is broken. adding a "coin" counter where the coin disappears once touching it and increasing the coin count is favorable. :D this should also reset once the game is restarted.
+<br>
+<br>
+<p style="font-family: Courier-New;"> The key commits are highlighted in yellow, some of them are mixed up/combined because I had to continue working on the new lessons. Please don't mind my weird commit messages. </p>
+</html>
