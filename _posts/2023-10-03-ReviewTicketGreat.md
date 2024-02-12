@@ -4,7 +4,7 @@ comments: false
 layout: tangibles
 title: Review Ticket For the Web Program Basic
 description: Whoopsies I forgot to add a review ticket lolol
-type: tangibles
+type: hacks
 courses: { compsci: {week: 6} }
 ---
 
