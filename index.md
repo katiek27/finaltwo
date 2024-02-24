@@ -2,9 +2,9 @@
 layout: home
 search_exclude: true
 ---
-# My Games!
-
 <html>
+<h1 style="text-align:center"> My Games! </h1>
+
 <img src="images/SnakeGame.png" alt="Snake Game">;
 <img src="images/MarioZero.png" alt="marioZero">;
 <img src="images/MarioOne.png" alt="marioOne">;
