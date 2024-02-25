@@ -1,13 +1,15 @@
+:root {
+    --default-canvas-filter: invert(100%);
+}
+
 $high-emph: rgba(white, 0.87);
 $med-emph: rgba(white, 0.69); 
 $low-emph: rgba(white, 0.38);
-$dark-grey : #5d94bb; 
-$overlay: mix($dark-grey, white, 95%);
-$overlay-light: mix($dark-grey, white, 86%);
-$dark-blue : #383850;
-$overlay-blue: mix($dark-blue, white, 85%);
-$light-blue: #1d538f;
-$overlay-lightblue: mix($light-blue, white, 80%);
+$dark-grey : #71a2de; 
+// $dark-grey : #1F1B24;
+// $overlay: mix($dark-grey, rgb(56, 65, 149));
+$overlay: #7180de;
+$overlay-light: mix($dark-grey, rgb(122, 51, 255), 86%);
 
 html, body, input, textarea, select, button {   
   color: $high-emph !important;
@@ -15,7 +17,7 @@ html, body, input, textarea, select, button {
 }
 
 a {
-    color: rgb(75, 186, 255) !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 a:hover {
@@ -27,8 +29,8 @@ a:hover {
 }
 
 .site-nav {
-    background-color: $light-blue;
-    border-color: $overlay-lightblue;
+    background-color: $dark-grey;
+    border-color: $overlay-light;
 }
 
 * {
@@ -50,13 +52,13 @@ pre, code {
 }
 
 .post-content p, .post-content li {
-    color: $med-emph;
+    color: rgb(244, 255, 94);
 }
 
 .btn {
-    background-color: $overlay-lightblue !important;
+    background-color: $overlay !important;
     color: $high-emph !important;
-    border-color: $overlay-lightblue !important;
+    border-color: $overlay-light !important;
 }
 
 .btn:hover {
@@ -64,14 +66,14 @@ pre, code {
 }
 
 table th{
-    background-color: $dark-blue;
-    border-color: $overlay-blue;
+    background-color: (rgb(176, 196, 217)) ;
+    border-color: $overlay-light;
     color: $high-emph;
 }
 
 table td{
-    background-color: $dark-blue;
-    border-color: $overlay-blue;
+    background-color: (rgb(168, 108, 167)) ;
+    border-color: $overlay-light;
     color: $med-emph;
 }
 
@@ -81,7 +83,7 @@ table td{
 }
 
 canvas {
-    filter: invert(100%);
+    filter: var(--default-canvas-filter);
 }
 
 .post-list > li > div {
@@ -99,10 +101,10 @@ li .post-meta-description {
 }
 
 .search-result-highlight {
-    color: #accbe1 !important;
+    color:rgb(255, 191, 210) !important;
     font-weight:bold !important;
 }
 
 .search-results-list-item .search-result-title {
-    color: cornflowerblue !important;
+    color: rgb(180, 201, 240) !important;
 }
