@@ -194,6 +194,7 @@ const GameSetup = {
         water : {src: "/images/Water.png"},
         avenida: { src: "/images/platformer/backgrounds/avenidawide3.jpg" },
         mountains: { src: "/images/platformer/backgrounds/mountains.jpg" },
+        sky: { src: "/images/platformer/backgrounds/luigibackground.jpeg" },
         clouds : { src: "/images/platformer/backgrounds/clouds.png"},
         space: { src: "/images/platformer/backgrounds/planet.jpg" },
         castles: { src: "/images/platformer/backgrounds/castles.png" },
@@ -245,19 +246,19 @@ const GameSetup = {
           runningLeft: { row: 5, frames: 3, idleFrame: {column: 1, frames: 0} },
           runningRight: { row: 4, frames: 3, idleFrame: {column: 1, frames: 0} },
         },
-        fish: {
-          src: "/images/fish.png",
-          width: 29,
-          height: 29,
-          scaleSize: 90,
+        kirby: {
+          src: "/images/platformer/sprites/kirby.png",
+          width: 50,
+          height: 32,
+          scaleSize: 60,
           speedRatio: 0.7,
-          w: { row: 4, frames: 2 },
-          wa: { row: 4, frames: 2 },
-          wd: { row: 4, frames: 2 },
-          a: { row: 1, frames: 2, idleFrame: { row: 1, frames: 0 } },
-          s: { row: 0, frames: 2 },
-          d: { row: 2, frames: 2, idleFrame: { row: 2, frames: 0 }}
-        }
+          w: { row: 1, frames: 0 },
+          wa: { row: 1, frames: 0 },
+          wd: { row: 1, frames: 0 },
+          a: { row: 1, frames: 0, idleFrame: { row: 1, frames: 0 } },
+          s: { row: 1, frames: 0 },
+          d: { row: 1, frames: 0, idleFrame: { row: 1, frames: 0 }}
+        },
       },
       enemies: {
         goomba: {
@@ -427,27 +428,31 @@ const GameSetup = {
         // Space Game Level added to the GameEnv ...
         new GameLevel( {tag: "space", callback: this.playerOffScreenCallBack, objects: spaceGameObjects} );
 
-        // Avenida Game Level definition...
-        const fishGameObjects = [
-          // GameObject(s), the order is important to z-index...
-          { name: 'water', id: 'background', class: Background, data: this.assets.backgrounds.water },
-          { name: 'grass', id: 'platform', class: Platform, data: this.assets.platforms.grass },
-          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2, yPercentage: 0.85 },
-          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2368, yPercentage: 0.85 },
-          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.5, yPercentage: 0.85 },
-          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.5368, yPercentage: 0.85 },
-          { name: 'goomba', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage: 0.3, minPosition: 0.05},
-          { name: 'goomba', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.5, minPosition: 0.3 },
-          { name: 'mushroom', id: 'mushroom', class: Mushroom, data: this.assets.enemies.mushroom, xPercentage: 0.09},
-          { name: 'goombaSpecial', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.75, minPosition: 0.5 }, //this special name is used for random event 2 to make sure that only one of the Goombas ends the random event
-          { name: 'flyingGoomba', id: 'flyingGoomba', class: FlyingGoomba, data: this.assets.enemies.flyingGoomba, xPercentage:  0.5, minPosition:  0.05},
-          { name: 'flyingGoomba', id: 'flyingGoomba', class: FlyingGoomba, data: this.assets.enemies.flyingGoomba, xPercentage:  0.9, minPosition: 0.5},
-          { name: 'fish', id: 'player', class: Player, data: this.assets.players.fish },
-          { name: 'complete', id: 'background', class: BackgroundTransitions,  data: this.assets.backgrounds.complete },
-          { name: 'tree', id: 'tree', class: Tree, data: this.assets.obstacles.tree },
-          ];
-          // Avenida Game Level added to the GameEnv ...
-          new GameLevel( {tag: "fish", callback: this.playerOffScreenCallBack, objects: fishGameObjects } );
+      // Kirby Game Level definition...
+      const kirbyGameObjects = [
+        // GameObject(s), the order is important to z-index...
+        { name: 'sky', id: 'background', class: Background, data: this.assets.backgrounds.sky },
+        { name: 'grass', id: 'platform', class: Platform, data: this.assets.platforms.grass },
+        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.2, yPercentage: 0.85 },
+        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.2368, yPercentage: 0.85 },
+        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.5, yPercentage: 0.85 },
+        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.5368, yPercentage: 0.85 },
+        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.4, yPercentage: 1 },
+        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.4, yPercentage: 0.9 },
+        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.4, yPercentage: 0.8 },
+        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.4, yPercentage: 0.7 },
+        { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.4, yPercentage: 0.6 },
+        { name: 'goomba', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage: 0.3, minPosition: 0.05},
+        { name: 'goomba', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.5, minPosition: 0.3 },
+        { name: 'goombaSpecial', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.75, minPosition: 0.5 }, //this special name is used for random event 2 to make sure that only one of the Goombas ends the random event
+        { name: 'flyingGoomba', id: 'flyingGoomba', class: FlyingGoomba, data: this.assets.enemies.flyingGoomba, xPercentage:  0.5, minPosition:  0.05},
+        { name: 'flyingGoomba', id: 'flyingGoomba', class: FlyingGoomba, data: this.assets.enemies.flyingGoomba, xPercentage:  0.9, minPosition: 0.5},
+        { name: 'kirby', id: 'player', class: Player, data: this.assets.players.kirby },
+        { name: 'complete', id: 'background', class: BackgroundTransitions,  data: this.assets.backgrounds.complete },
+        { name: 'tree', id: 'tree', class: Tree, data: this.assets.obstacles.tree },
+      ];
+      // Kirby Game Level added to the GameEnv ...
+      new GameLevel( {tag: "kirby", callback: this.playerOffScreenCallBack, objects: kirbyGameObjects} );
 
         // Game Over Level definition...
         const endGameObjects = [
