@@ -155,10 +155,12 @@ export class Player extends Character {
         // Player moving right 
         if (this.isActiveAnimation("a")) {
             if (this.movement.left) this.x -= this.isActiveAnimation("s") ? this.moveSpeed : this.speed;  // Move to left
+            if (GameEnv.currentLevel.tag == "kirby") {this.canvas.style.transform=""};
         }
         // Player moving left
         if (this.isActiveAnimation("d")) {
             if (this.movement.right) this.x += this.isActiveAnimation("s") ? this.moveSpeed : this.speed;  // Move to right
+            if (GameEnv.currentLevel.tag == "kirby") {this.canvas.style.transform="scaleX(-1)"};
         }
         // Player moving at dash speed left or right 
         if (this.isActiveAnimation("s")) {}

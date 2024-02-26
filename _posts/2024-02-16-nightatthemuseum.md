@@ -5,6 +5,7 @@ title: N@TM Showcase!
 description: night at the museum was a success!
 courses: {'compsci': {'week': 24}}
 type: hacks
+comments: true
 ---
 # showtime ! {#headings}
 I was really glad to see people making good use of our leaderboard. They would try to beat the game as fast as possible and then look up their names on the leaderboard, I heard a lot of "there I am!"s or "Look! I'm __ place!" and our leaderboard had a lot of storage by the end of N@TM. 

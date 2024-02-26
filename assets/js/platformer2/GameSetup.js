@@ -269,6 +269,13 @@ const GameSetup = {
           speedRatio: 0.7,
           xPercentage: 0.6,
         },
+        magikarp: {
+          src:"/images/platformer/sprites/magikarp.png",
+          width: 145,
+          height: 116,
+          scaleSize: 90,
+          speedRatio: 0.7,
+        },
         flyingGoomba: {
           src: "/images/platformer/sprites/flying-goomba.png",
           width: 448,
@@ -438,11 +445,10 @@ const GameSetup = {
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2736, yPercentage: 0.85 },
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.6, yPercentage: 1 },
         { name: 'itemBlock', id: 'jumpPlatform', class: JumpPlatform, data: this.assets.platforms.itemBlock, xPercentage: 0.4, yPercentage: 0.65 }, //item block is a platform
-        { name: 'goomba', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage: 0.3, minPosition: 0.05},
-        { name: 'goomba', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.5, minPosition: 0.3 },
-        { name: 'goombaSpecial', id: 'goomba', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.75, minPosition: 0.5 }, //this special name is used for random event 2 to make sure that only one of the Goombas ends the random event
-        { name: 'flyingGoomba', id: 'flyingGoomba', class: FlyingGoomba, data: this.assets.enemies.flyingGoomba, xPercentage:  0.5, minPosition:  0.05},
-        { name: 'flyingGoomba', id: 'flyingGoomba', class: FlyingGoomba, data: this.assets.enemies.flyingGoomba, xPercentage:  0.9, minPosition: 0.5},
+        { name: 'magikarp', id: 'magikarp', class: Goomba, data: this.assets.enemies.magikarp, xPercentage: 0.7, minPosition: 0.05},
+        { name: 'magikarp', id: 'magikarp', class: Goomba, data: this.assets.enemies.magikarp, xPercentage:  0.5, minPosition: 0.3 },
+        { name: 'magikarpSpecial', id: 'magikarp', class: Goomba, data: this.assets.enemies.magikarp, xPercentage:  0.75, minPosition: 0.5 }, //this special name is used for random event 2 to make sure that only one of the Goombas ends the random event
+        { name: 'coin', id: 'coin', class: Coin, data: this.assets.obstacles.coin, xPercentage: 0.2575, yPercentage: 0.75 },
         { name: 'kirby', id: 'player', class: Player, data: this.assets.players.kirby },
         { name: 'complete', id: 'background', class: BackgroundTransitions,  data: this.assets.backgrounds.complete },
         { name: 'tree', id: 'tree', class: Tree, data: this.assets.obstacles.tree },
