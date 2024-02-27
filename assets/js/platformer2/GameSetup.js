@@ -11,6 +11,7 @@ import Platform from './Platform.js';
 import JumpPlatform from './JumpPlatform.js';
 import Player from './Player.js';
 import Tube from './Tube.js';
+import Tube2 from "./Tube2.js";
 import Tree from './Tree.js';
 import Goomba from './Goomba.js';
 import FlyingGoomba from './FlyingGoomba.js';
@@ -170,7 +171,8 @@ const GameSetup = {
       obstacles: {
         tube: { src: "/images/platformer/obstacles/tube.png" },
         coin: { src: "/images/platformer/obstacles/coin.png"},
-        tree: { src: "/images/platformer/obstacles/tree.png"}
+        tree: { src: "/images/platformer/obstacles/treeOG.png"},
+        star: { src: "/images/platformer/obstacles/star.png" },
       },
       platforms: {
         grass: { src: "/images/platformer/platforms/grass.png" },
@@ -445,13 +447,13 @@ const GameSetup = {
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.2736, yPercentage: 0.85 },
         { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.block, xPercentage: 0.6, yPercentage: 1 },
         { name: 'itemBlock', id: 'jumpPlatform', class: JumpPlatform, data: this.assets.platforms.itemBlock, xPercentage: 0.4, yPercentage: 0.65 }, //item block is a platform
-        { name: 'magikarp', id: 'magikarp', class: Goomba, data: this.assets.enemies.magikarp, xPercentage: 0.7, minPosition: 0.05},
-        { name: 'magikarp', id: 'magikarp', class: Goomba, data: this.assets.enemies.magikarp, xPercentage:  0.5, minPosition: 0.3 },
-        { name: 'magikarpSpecial', id: 'magikarp', class: Goomba, data: this.assets.enemies.magikarp, xPercentage:  0.75, minPosition: 0.5 }, //this special name is used for random event 2 to make sure that only one of the Goombas ends the random event
+        { name: 'magikarp', id: 'goomba', class: Goomba, data: this.assets.enemies.magikarp, xPercentage: 0.7, minPosition: 0.05},
+        { name: 'magikarp', id: 'goomba', class: Goomba, data: this.assets.enemies.magikarp, xPercentage:  0.5, minPosition: 0.3 },
+        { name: 'magikarpSpecial', id: 'goomba', class: Goomba, data: this.assets.enemies.magikarp, xPercentage:  0.75, minPosition: 0.5 }, //this special name is used for random event 2 to make sure that only one of the Goombas ends the random event
         { name: 'coin', id: 'coin', class: Coin, data: this.assets.obstacles.coin, xPercentage: 0.2575, yPercentage: 0.75 },
         { name: 'kirby', id: 'player', class: Player, data: this.assets.players.kirby },
         { name: 'complete', id: 'background', class: BackgroundTransitions,  data: this.assets.backgrounds.complete },
-        { name: 'tree', id: 'tree', class: Tree, data: this.assets.obstacles.tree },
+        { name: 'tube', id: 'tube', class: Tube2, data: this.assets.obstacles.tube },
       ];
       // Kirby Game Level added to the GameEnv ...
       new GameLevel( {tag: "kirby", callback: this.playerOffScreenCallBack, objects: kirbyGameObjects} );

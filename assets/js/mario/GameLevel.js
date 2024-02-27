@@ -1,21 +1,41 @@
 import GameEnv from './GameEnv.js';
 import Background from './Background.js';
 import Platform from './Platform.js';
-import Player from './Player.js';
-import Tube from './Tube.js';
+import { initPlayer } from './Player.js';
 
 // Store the assets and attributes of the Game at the specific GameLevel.
 class GameLevel {
-    constructor(gameObject) {
-        // conditional assignments from GameObject to instance variables
-        this.tag = gameObject?.tag;
-        this.backgroundImg = gameObject.background?.file;
-        this.platformImg = gameObject.platform?.file;
-        this.playerImg = gameObject.player?.file;
-        this.playerData = gameObject?.player;
-        this.tubeImg = gameObject.tube?.file;
-        this.isComplete = gameObject?.callback; // function that determines if level is complete
-        GameEnv.levels.push(this);
+    constructor() {
+        this.backgroundImg = null;
+        this.platformImg = null;
+        this.playerImg = null;
+        this.goombaImg = null;
+        this.nextLevel = null;
+        this.isComplete = null; // function that determines if level is complete
+    }
+
+    setBackgroundFile(file) {
+        this.backgroundImg = file;
+    }
+
+    setPlatformFile(file) {
+        this.platformImg = file;
+    }
+
+    setPlayerFile(file) {
+        this.playerImg = file;
+    }
+
+    setGoombaFile(file) {
+        this.goombaImg = file;
+    }
+
+    setNextLevel(gameLvl) {
+        this.nextLevel = gameLvl;
+    }
+
+    setIsComplete(callBack) {
+        this.isComplete = callBack;
     }
 
     // Load level data
@@ -32,9 +52,7 @@ class GameLevel {
         if (this.playerImg) {
             imagesToLoad.push(this.loadImage(this.playerImg));
         }
-        if (this.tubeImg) {
-            imagesToLoad.push(this.loadImage(this.tubeImg));
-        }
+        if (this.goombaImg)
 
         try {
             // Do not proceed until images are loaded
@@ -64,20 +82,20 @@ class GameLevel {
             // Prepare HTML with Player Canvas (if playerImg is defined)
             if (this.playerImg) {
                 const playerCanvas = document.createElement("canvas");
-                playerCanvas.id = "character";
+                playerCanvas.id = "characters";
                 document.querySelector("#canvasContainer").appendChild(playerCanvas);
                 const playerSpeedRatio = 0.7;
-                new Player(playerCanvas, loadedImages[i], playerSpeedRatio, this.playerData);
+                GameEnv.player = initPlayer(playerCanvas, loadedImages[i], playerSpeedRatio);
                 i++;
             }
 
-            // Prepare HTML with Player Canvas (if playerImg is defined)
-            if (this.tubeImg) {
-                const tubeCanvas = document.createElement("canvas");
-                tubeCanvas.id = "tube";
-                document.querySelector("#canvasContainer").appendChild(tubeCanvas);
-                new Tube(tubeCanvas, loadedImages[i]);
-                i++;
+            // Prepare HTML with Goomba Canvas (if goombaImg is defined)
+            if (this.goombaImg) {
+                const goombaCanvas = document.createElement('canvas');
+                goombaCanvas.id = 'characters';
+                document.querySelector('#canvasContainer').appendChild(goombaCanvas);
+                const goombaSpeedRatio = 0.5;
+                GameEnv.player = initGoomba(goombaCanvas, loadedImaged[i], goombaSpeedRatio);
             }
 
         } catch (error) {
@@ -95,6 +113,10 @@ class GameLevel {
             image.onerror = reject;
         });
     }
+
+    // Generate level elements
+    generate() { /* Generate level elements */ }
+    // Additional level-specific methods
 }
 
 export default GameLevel;

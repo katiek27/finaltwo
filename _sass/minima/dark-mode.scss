@@ -5,11 +5,11 @@
 $high-emph: rgba(white, 0.87);
 $med-emph: rgba(white, 0.69); 
 $low-emph: rgba(white, 0.38);
-$dark-grey : #71a2de; 
+$dark-grey : #5693df; 
 // $dark-grey : #1F1B24;
 // $overlay: mix($dark-grey, rgb(56, 65, 149));
-$overlay: #7180de;
-$overlay-light: mix($dark-grey, rgb(122, 51, 255), 86%);
+$overlay: #ffdcaa;
+$overlay-light: #ffffff;
 
 html, body, input, textarea, select, button {   
   color: $high-emph !important;
@@ -72,7 +72,7 @@ table th{
 }
 
 table td{
-    background-color: (rgb(168, 108, 167)) ;
+    background-color: (rgb(103, 172, 232)) ;
     border-color: $overlay-light;
     color: $med-emph;
 }
