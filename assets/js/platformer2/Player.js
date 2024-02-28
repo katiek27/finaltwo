@@ -302,6 +302,14 @@ export class Player extends Character {
             }
         } 
 
+        if (this.collisionData.touchPoints.other.id === "goo") {
+            if (this.collisionData.touchPoints.other.left && !this.collisionData.touchPoints.other.bottom && !this.collisionData.touchPoints.other.top && GameEnv.invincible === false && this.timer === false) {
+                setTimeout(this.goombaCollision.bind(this), 50);
+            } else if (this.collisionData.touchPoints.other.right && !this.collisionData.touchPoints.other.bottom && !this.collisionData.touchPoints.other.top && GameEnv.invincible === false && this.timer === false) {
+                setTimeout(this.goombaCollision.bind(this), 50);
+            }
+        }
+
         if (this.collisionData.touchPoints.other.id === "mushroom") {
             GameEnv.destroyedMushroom = true;
             this.canvas.style.filter = 'invert(1)';

@@ -18,6 +18,7 @@ import FlyingGoomba from './FlyingGoomba.js';
 import BlockPlatform from './BlockPlatform.js';
 import Mushroom from './Mushroom.js';
 import Coin from './Coin.js';
+import Goo from './Goo.js';
 
 
 /* Coding Style Notes
@@ -172,7 +173,7 @@ const GameSetup = {
         tube: { src: "/images/platformer/obstacles/tube.png" },
         coin: { src: "/images/platformer/obstacles/coin.png"},
         tree: { src: "/images/platformer/obstacles/treeOG.png"},
-        star: { src: "/images/platformer/obstacles/star.png" },
+        goo: { src: "/images/platformer2/obstacles/goo.png"},
       },
       platforms: {
         grass: { src: "/images/platformer/platforms/grass.png" },
@@ -451,6 +452,7 @@ const GameSetup = {
         { name: 'magikarp', id: 'goomba', class: Goomba, data: this.assets.enemies.magikarp, xPercentage:  0.5, minPosition: 0.3 },
         { name: 'magikarpSpecial', id: 'goomba', class: Goomba, data: this.assets.enemies.magikarp, xPercentage:  0.75, minPosition: 0.5 }, //this special name is used for random event 2 to make sure that only one of the Goombas ends the random event
         { name: 'coin', id: 'coin', class: Coin, data: this.assets.obstacles.coin, xPercentage: 0.2575, yPercentage: 0.75 },
+        { name: 'goo', id: 'goo', class: Goo, data: this.assets.obstacles.goo, },
         { name: 'kirby', id: 'player', class: Player, data: this.assets.players.kirby },
         { name: 'complete', id: 'background', class: BackgroundTransitions,  data: this.assets.backgrounds.complete },
         { name: 'tube', id: 'tube', class: Tube2, data: this.assets.obstacles.tube },
